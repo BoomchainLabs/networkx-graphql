@@ -25,11 +25,12 @@ def schema(graph: nx.Graph, node_type_extractor: Extractor | None = None) -> str
         for node in graph.nodes:
             yield node
 
-    @graph_model.edge()
+    @graph_model.edge('edge')
     def edges():
         for edge in graph.edges:
-            yield edge
+            yield {'source': edge[0], 'target': edge[1]}
 
     graphql_builder = GraphQLBuilder(graph_model, graph_type=graph_type(graph))
 
     return graphql_builder.build()
+
