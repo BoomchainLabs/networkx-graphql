@@ -1,11 +1,11 @@
 import networkx as nx
 import strawberry
-from graphinate import GraphModel, GraphType
+from graphinate import GraphModel, GraphType, graphql
 from graphinate.builders import GraphQLBuilder
 from graphinate.typing import Extractor
 
 
-def graph_type(graph: nx.Graph):
+def graph_type(graph: nx.Graph) -> GraphType:
     if graph.is_directed() and graph.is_multigraph():
         return GraphType.MultiDiGraph
     elif graph.is_directed():
@@ -15,6 +15,7 @@ def graph_type(graph: nx.Graph):
     else:
         return GraphType.Graph
 
+
 def schema(graph: nx.Graph, node_type_extractor: Extractor | None = None) -> strawberry.Schema:
     graph_model = GraphModel(name=graph.name)
 
@@ -22,8 +23,7 @@ def schema(graph: nx.Graph, node_type_extractor: Extractor | None = None) -> str
 
     @graph_model.node(node_type_extractor)
     def nodes():
-        for node in graph.nodes:
-            yield node
+        yield from graph.nodes
 
     @graph_model.edge('edge')
     def edges():
@@ -34,3 +34,6 @@ def schema(graph: nx.Graph, node_type_extractor: Extractor | None = None) -> str
 
     return graphql_builder.build()
 
+
+def run(schema: strawberry.Schema, port: 8073) -> dict:
+    return graphql(schema, port)
