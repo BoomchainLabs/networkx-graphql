@@ -1,6 +1,6 @@
 # networkx-graphql
 
-Adding the QL to the NetworkX Graph ;-p
+The QL in the nx.Graph
 
 ## Development
 
