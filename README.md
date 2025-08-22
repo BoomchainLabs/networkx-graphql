@@ -57,7 +57,8 @@
       <a href="https://app.codacy.com/gh/erivlis/networkx-graphql/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"><img alt="Codacy Quality" src="https://app.codacy.com/project/badge/Grade/eeb375c023a9425f995e44eae66e41f0"></a>
       <a href="https://app.codacy.com/gh/erivlis/networkx-graphql/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage"><img alt="Codacy Coverage" src="https://app.codacy.com/project/badge/Coverage/eeb375c023a9425f995e44eae66e41f0"/></a>
       <a href="https://www.codefactor.io/repository/github/erivlis/networkx-graphql/overview/main"><img src="https://www.codefactor.io/repository/github/erivlis/networkx-graphql/badge/main" alt="CodeFactor" /></a>
-      <a href="https://scrutinizer-ci.com/g/erivlis/networkx-graphql"><img src="https://scrutinizer-ci.com/g/erivlis/networkx-graphql/badges/quality-score.png?b=main" alt="Scrutinizer" /></a>
+      <a href="https://app.deepsource.com/gh/erivlis/networkx-graphql/" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://app.deepsource.com/gh/erivlis/networkx-graphql.svg/?label=active+issues&show_trend=true&token=uyl1AJLBqgkY7MsVbtjPnf9j"/></a>
+      <a href="https://app.deepsource.com/gh/erivlis/networkx-graphql/" target="_blank"><img alt="DeepSource" title="DeepSource" src="https://app.deepsource.com/gh/erivlis/networkx-graphql.svg/?label=resolved+issues&show_trend=true&token=uyl1AJLBqgkY7MsVbtjPnf9j"/></a>
       <a href="https://snyk.io/test/github/erivlis/networkx-graphql"><img alt="Snyk" src="https://snyk.io/test/github/erivlis/networkx-graphql/badge.svg"></a>
     </td>
   </tr>
