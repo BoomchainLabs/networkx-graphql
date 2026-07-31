@@ -66,18 +66,26 @@
 
 ## Overview
 
-**networkx-graphql** brings GraphQL querying to [NetworkX](https://networkx.org/) graph structures in Python. By leveraging [Strawberry GraphQL](https://strawberry.rocks/) and [Graphinate](https://github.com/erivlis/graphinate), it automatically generates strongly-typed GraphQL schemas directly from NetworkX graph instances and serves them via an interactive GraphQL web interface.
+**networkx-graphql** brings GraphQL querying to [NetworkX](https://networkx.org/) graph structures in Python. By
+leveraging [Strawberry GraphQL](https://strawberry.rocks/) and [Graphinate](https://github.com/erivlis/graphinate), it
+automatically generates strongly-typed GraphQL schemas directly from NetworkX graph instances and serves them via an
+interactive GraphQL web interface.
 
-Whether you are working with simple undirected graphs, complex directed networks, or multi-edge graphs, `networkx-graphql` allows you to explore and query node relationships with zero GraphQL boilerplate.
+Whether you are working with simple undirected graphs, complex directed networks, or multi-edge graphs,
+`networkx-graphql` allows you to explore and query node relationships with zero GraphQL boilerplate.
 
 ---
 
 ## Features
 
-- ⚡ **Instant Schema Generation**: Automatically derive Strawberry GraphQL schemas from NetworkX graphs in a single line of code.
-- 🕸️ **Full NetworkX Compatibility**: Seamlessly supports `nx.Graph`, `nx.DiGraph`, `nx.MultiGraph`, and `nx.MultiDiGraph`.
-- 🏷️ **Custom Node Classification**: Supply custom extractor functions to dynamically extract node types and structure GraphQL schemas accordingly.
-- 🌐 **Embedded GraphQL Server**: Built-in HTTP server with an interactive GraphiQL playground powered by Uvicorn and Starlette.
+- ⚡ **Instant Schema Generation**: Automatically derive Strawberry GraphQL schemas from NetworkX graphs in a single line
+  of code.
+- 🕸️ **Full NetworkX Compatibility**: Seamlessly supports `nx.Graph`, `nx.DiGraph`, `nx.MultiGraph`, and
+  `nx.MultiDiGraph`.
+- 🏷️ **Custom Node Classification**: Supply custom extractor functions to dynamically extract node types and structure
+  GraphQL schemas accordingly.
+- 🌐 **Embedded GraphQL Server**: Built-in HTTP server with an interactive GraphiQL playground powered by Uvicorn and
+  Starlette.
 - 🐍 **Fully Typed**: Written with Python 3.11+ type annotations for maximum IDE support and type safety.
 
 ---
@@ -126,7 +134,13 @@ schema = nxg.schema(graph)
 nxg.run(schema, port=8073)
 ```
 
-Now navigate to `http://localhost:8073/graphql` in your browser to inspect the schema and run queries using GraphiQL!
+Now navigate in your browser to `http://localhost:8073` (which will redirect to `http://localhost:8073/viewer'), to view
+the graph using 3D force-directed graph visualizer for the underlying NetworkX graph.
+The viewer is powered by [Graphinate](https://github.com/graphinate/graphinate).
+
+Explore the GraphQL schema and run queries using the built-in GraphiQL interface at `http://localhost:8073/graphiql`.
+
+
 
 ---
 
@@ -134,7 +148,8 @@ Now navigate to `http://localhost:8073/graphql` in your browser to inspect the s
 
 ### Custom Node Type Extractor
 
-By default, all nodes are categorized under a generic type (`'node'`). You can provide a custom `node_type_extractor` function to map graph nodes to distinct GraphQL types:
+By default, all nodes are categorized under a generic type (`'node'`). You can provide a custom `node_type_extractor`
+function to map graph nodes to distinct GraphQL types:
 
 ```python
 import networkx as nx
@@ -168,10 +183,10 @@ nxg.run(schema, port=8073)
 
 Generates a [`strawberry.Schema`](https://strawberry.rocks/) from a NetworkX graph instance.
 
-| Parameter | Type | Description | Default |
-| :--- | :--- | :--- | :--- |
-| `graph` | `nx.Graph` | Any NetworkX graph instance (`Graph`, `DiGraph`, `MultiGraph`, `MultiDiGraph`). | *Required* |
-| `node_type_extractor` | `Extractor \| None` | A function or callable `(node) -> str` that returns a GraphQL type name for a node. | `None` |
+| Parameter             | Type                | Description                                                                         | Default    |
+|:----------------------|:--------------------|:------------------------------------------------------------------------------------|:-----------|
+| `graph`               | `nx.Graph`          | Any NetworkX graph instance (`Graph`, `DiGraph`, `MultiGraph`, `MultiDiGraph`).     | *Required* |
+| `node_type_extractor` | `Extractor \| None` | A function or callable `(node) -> str` that returns a GraphQL type name for a node. | `None`     |
 
 **Returns**: `strawberry.Schema` - The generated Strawberry GraphQL schema object.
 
@@ -181,16 +196,17 @@ Generates a [`strawberry.Schema`](https://strawberry.rocks/) from a NetworkX gra
 
 Launches an HTTP server to serve the Strawberry GraphQL schema. Alias: `networkx_graphql.run`.
 
-| Parameter | Type | Description | Default |
-| :--- | :--- | :--- | :--- |
+| Parameter        | Type                | Description                             | Default    |
+|:-----------------|:--------------------|:----------------------------------------|:-----------|
 | `graphql_schema` | `strawberry.Schema` | The Strawberry GraphQL schema to serve. | *Required* |
-| `port` | `int` | The HTTP port to run the server on. | `8073` |
+| `port`           | `int`               | The HTTP port to run the server on.     | `8073`     |
 
 ---
 
 ## Development & Testing
 
-This project uses [`uv`](https://github.com/astral-sh/uv) for dependency management and [`pytest`](https://docs.pytest.org/) for testing.
+This project uses [`uv`](https://github.com/astral-sh/uv) for dependency management and [
+`pytest`](https://docs.pytest.org/) for testing.
 
 ### Setup Development Environment
 
