@@ -1,4 +1,8 @@
-## Unreleased
+## v0.1.2 (2026-07-31)
+
+### Refactor
+
+- Refactors server entrypoint to `run` and updates project documentation.
 
 ## v0.1.1 (2025-08-31)
 

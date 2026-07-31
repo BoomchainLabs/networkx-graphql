@@ -30,7 +30,8 @@
       <a href="https://www.jetbrains.com/pycharm/"><img alt="PyCharm" src="https://img.shields.io/badge/PyCharm-FCF84A.svg?logo=PyCharm&logoColor=black&labelColor=21D789&color=FCF84A"></a>
       <a href="https://github.com/astral-sh/uv"><img alt="uv" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json" style="max-width:100%;"></a>
       <a href="https://github.com/astral-sh/ruff"><img alt="Ruff" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" style="max-width:100%;"></a>
-      <!--a href="https://squidfunk.github.io/mkdocs-material/"><img src="https://img.shields.io/badge/Material_for_MkDocs-526CFE?&logo=MaterialForMkDocs&logoColor=white&labelColor=grey"></a-->
+      <a href="https://hatch.pypa.io"><img alt="Hatch project" class="off-glb" loading="lazy" src="https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg"></a>
+      <a href="https://commitizen-tools.github.io/commitizen"><img alt="commitizen" src="https://custom-icon-badges.demolab.com/badge/commitizen-7e56c2?logo=commitizen&labelColor=grey"></a>
       <a href="https://hatch.pypa.io"><img alt="Hatch project" class="off-glb" loading="lazy" src="https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg"></a>
     </td>
   </tr>
@@ -192,9 +193,9 @@ Generates a [`strawberry.Schema`](https://strawberry.rocks/) from a NetworkX gra
 
 ---
 
-### `networkx_graphql.server(graphql_schema, port=8073)`
+### `networkx_graphql.run(graphql_schema, port=8073)`
 
-Launches an HTTP server to serve the Strawberry GraphQL schema. Alias: `networkx_graphql.run`.
+Launches an HTTP server to serve the Strawberry GraphQL schema.
 
 | Parameter        | Type                | Description                             | Default    |
 |:-----------------|:--------------------|:----------------------------------------|:-----------|
