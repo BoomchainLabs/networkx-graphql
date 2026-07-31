@@ -34,7 +34,7 @@ def schema(graph: nx.Graph, node_type_extractor: Extractor | None = None) -> str
     return graphql_builder.build()
 
 
-def server(graphql_schema: strawberry.Schema, port: int = 8073):
+def run(graphql_schema: strawberry.Schema, port: int = 8073):
     """Run a GraphQL server with the given schema on the specified port.
 
     Args:
@@ -42,3 +42,6 @@ def server(graphql_schema: strawberry.Schema, port: int = 8073):
         port (int, optional): The port number to run the server on. Defaults to 8073.
     """
     graphql.server(graphql_schema=graphql_schema, port=port)
+
+
+
