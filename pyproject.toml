@@ -62,6 +62,7 @@ test = [
     "faker",
     "pytest",
     "pytest-asyncio",
+    "pytest-codspeed",
     "pytest-cov",
     "pytest-randomly",
     "pytest-xdist"

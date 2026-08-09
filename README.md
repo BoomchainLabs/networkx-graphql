@@ -42,6 +42,7 @@
       <a href="https://github.com/erivlis/networkx-graphql/actions/workflows/publish.yml"><img alt="Publish" src="https://github.com/erivlis/networkx-graphql/actions/workflows/test-beta.yml/badge.svg"></a>
       <a href="https://github.com/erivlis/networkx-graphql/actions/workflows/publish.yml"><img alt="Publish" src="https://github.com/erivlis/networkx-graphql/actions/workflows/publish.yml/badge.svg"></a>
       <!--a href="https://github.com/erivlis/networkx-graphql/actions/workflows/publish-docs.yaml"><img alt="Publish Docs" src="https://github.com/erivlis/networkx-graphql/actions/workflows/publish-docs.yaml/badge.svg"></a-->
+      <a href="https://app.codspeed.io/erivlis/networkx-graphql?utm_source=badge"><img src="https://img.shields.io/endpoint?url=https://codspeed.io/badge.json" alt="CodSpeed"/></a>
     </td>
   </tr>
   <tr>
@@ -228,6 +229,20 @@ uv run pytest
 
 # Run linter checks
 uv run ruff check .
+```
+
+### Running Benchmarks
+
+Performance is tracked continuously with [CodSpeed](https://codspeed.io). The benchmarks live in `benchmarks/` and are
+regular `pytest` tests using the `benchmark` fixture provided by
+[`pytest-codspeed`](https://codspeed.io/docs/benchmarks/python).
+
+```bash
+# Run the benchmarks locally (walltime measurements, no instrumentation)
+uv run pytest benchmarks --codspeed
+
+# Run them the way CI does, with CPU simulation via the CodSpeed CLI
+codspeed run --mode simulation -- uv run pytest benchmarks --codspeed
 ```
 
 ---
