@@ -55,13 +55,8 @@ dev = [
     "uv"
 ]
 docs = [
-    "mkdocs-material",
-    "mkdocstrings-python",
-    "mkdocs-git-revision-date-localized-plugin",
-    "mkdocs-gen-files",
-    "mkdocs-glightbox",
-    "mkdocs-literate-nav",
-    "mkdocs-section-index",
+    "zensical",
+    "mkdocstrings-python"
 ]
 test = [
     "faker",
